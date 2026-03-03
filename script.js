@@ -1,10 +1,7 @@
-/* ════════════════════════════════════════════════════════════════
-   ASYNC WEATHER TRACKER — script.js
+/* ASYNC WEATHER TRACKER — script.js
    APIs:
      • Open-Meteo Geocoding : https://geocoding-api.open-meteo.com
-     • Open-Meteo Weather   : https://api.open-meteo.com
-   No API key required.
-   ════════════════════════════════════════════════════════════════ */
+     • Open-Meteo Weather   : https://api.open-meteo.com */
 
 // ── CONFIG ──────────────────────────────────────────────────────
 const GEO_URL     = "https://geocoding-api.open-meteo.com/v1/search";
@@ -33,7 +30,7 @@ const weatherCanvas    = document.getElementById("weatherCanvas");
 const lightningOverlay = document.getElementById("lightningOverlay");
 const headerIconPill   = document.getElementById("headerIconPill");
 
-// ── STATE ────────────────────────────────────────────────────────
+// ── STATE
 let selectedGeo   = null;   // { lat, lon, name, country, admin1 }
 let acActiveIndex = -1;
 let debounceTimer = null;
@@ -41,9 +38,7 @@ let animationId   = null;
 let particles     = [];
 let currentScene  = null;
 
-/* ════════════════════════════════════════════════════════════════
-   CANVAS / PARTICLE SYSTEM
-   ════════════════════════════════════════════════════════════════ */
+/*CANVAS / PARTICLE SYSTEM */
 
 const ctx = weatherCanvas.getContext("2d");
 
@@ -978,4 +973,5 @@ cLog("info", "[INIT] LocalStorage read \u2014 " +
 showEmpty();
 
 // Gentle starfield while idle
+
 startScene("night");
